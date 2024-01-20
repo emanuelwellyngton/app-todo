@@ -1,0 +1,25 @@
+.tasks-list {
+    background-color: #FFF;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    padding: 22px 25px;
+    display: flex;
+}
+
+.task-title {
+    color: #939CBD;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 11px;
+}
+
+.checked-task {
+    text-decoration-line: line-through;
+}

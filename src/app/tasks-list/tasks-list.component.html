@@ -1,0 +1,6 @@
+<ul class="tasks-list">
+    <li class="task" *ngFor="let task of tasks">
+        <input (click)="check(task)" class="check-input" type="checkbox" name="check">
+        <p class="task-title" [ngClass]="task.isChecked ? 'checked-task' : '' ">{{task.title}}</p>
+    </li>
+</ul>

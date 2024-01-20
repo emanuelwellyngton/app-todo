@@ -1,0 +1,19 @@
+:host {
+    margin: auto;
+}
+
+header {
+    background-color: #AF7EEB;
+    padding: 15px 120px;
+    margin: 50px 0 20px 0;
+    display: inline-block;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal; 
+}
