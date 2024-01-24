@@ -14,14 +14,17 @@ export class TasksListComponent {
   public check(task: Task) {
     task.isChecked = !task.isChecked;
     if(task.isChecked == true) {
-      this.adicionar(task);
+      this.empurrarNaFila(task);
     }
-    console.log(this.tasks);
   }
 
-  public adicionar(task: Task) {
+  public empurrarNaFila(task: Task) {
     const index = this.tasks.indexOf(task);
     this.tasks.splice(index, 1);
     this.tasks.push(task);
+  }
+
+  public cadastrarTask(event: Task) {
+    this.tasks.push(event);
   }
 }

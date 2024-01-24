@@ -1,3 +1,9 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .tasks-list {
     background-color: #FFF;
     list-style-type: none;

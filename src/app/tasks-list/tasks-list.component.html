@@ -4,3 +4,5 @@
         <p class="task-title" [ngClass]="task.isChecked ? 'checked-task' : '' ">{{task.title}}</p>
     </li>
 </ul>
+
+<app-input-task (novaTask)="cadastrarTask($event)"></app-input-task>
