@@ -17,7 +17,13 @@ import { Task } from '../model/task';
     line-height: normal;
     border: none;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.08);
+    position: relative;
+    top: -10px;
 
+  }
+
+  .input-task:focus {
+    outline: 0;
   }
 
   .input-task::placeholder {
@@ -35,13 +41,15 @@ export class InputTaskComponent {
   public valor: string = '';
 
   public cadastrarTask() {
-    const task:Task = {
-      title: this.valor,
-      isChecked: false
+    if(this.valor != '') {
+      const task:Task = {
+        title: this.valor,
+        isChecked: false
+      }
+  
+      this.novaTask.emit(task);
+  
+      this.valor = '';
     }
-
-    this.novaTask.emit(task);
-
-    this.valor = '';
   }
 }

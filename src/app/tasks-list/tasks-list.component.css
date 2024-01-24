@@ -7,13 +7,14 @@
 .tasks-list {
     background-color: #FFF;
     list-style-type: none;
-    padding: 0;
+    padding: 22px 25px;
     margin: 0;
+    min-height: 166px;
 }
 
 .task {
-    padding: 22px 25px;
     display: flex;
+    padding: 5px;
 }
 
 .task-title {
@@ -24,6 +25,15 @@
     font-weight: 500;
     line-height: normal;
     margin-left: 11px;
+}
+
+.trash-icon {
+    justify-content: end;
+    margin-left: auto;
+}
+
+.trash-icon:hover {
+    cursor: pointer;
 }
 
 .checked-task {

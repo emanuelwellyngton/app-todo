@@ -7,7 +7,7 @@ import { Task } from '../model/task';
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent {
-  public tasks: Array<Task> = [{title: 'Comprar pão', isChecked: false}, {title: 'Fazer ioga', isChecked: false}];
+  public tasks: Array<Task> = [];
 
   public isChecked: boolean = false;
 
@@ -19,9 +19,13 @@ export class TasksListComponent {
   }
 
   public empurrarNaFila(task: Task) {
+    this.deleteTask(task);
+    this.tasks.push(task);
+  }
+
+  public deleteTask(task: Task) {
     const index = this.tasks.indexOf(task);
     this.tasks.splice(index, 1);
-    this.tasks.push(task);
   }
 
   public cadastrarTask(event: Task) {
