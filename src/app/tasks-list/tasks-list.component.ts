@@ -10,8 +10,9 @@ export class TasksListComponent implements DoCheck {
 
   ngDoCheck(): void {
     this.tasks.sort( (first, last) => Number(first.isChecked) - Number(last.isChecked) );
+    localStorage.setItem("list", JSON.stringify(this.tasks));
   }
-  public tasks: Array<Task> = [];
+  public tasks: Array<Task> = JSON.parse(localStorage.getItem("list") || "[]");
 
   public check(task: Task) {
     task.isChecked = !task.isChecked;

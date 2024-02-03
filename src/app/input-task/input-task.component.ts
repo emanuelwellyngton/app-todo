@@ -8,7 +8,7 @@ import { Task } from '../model/task';
   `,
   styles: [`
   .input-task {
-    background-color: #AF7EEB;
+    background-color: var(--secudary-bg-color);
     padding: 11px 53px;
     color: var(--primary-text-color);
     font-size: 16px;
