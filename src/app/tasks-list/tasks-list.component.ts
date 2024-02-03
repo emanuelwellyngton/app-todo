@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Task } from '../model/task';
 
 @Component({
@@ -6,16 +6,15 @@ import { Task } from '../model/task';
   templateUrl: './tasks-list.component.html',
   styleUrls: ['./tasks-list.component.css']
 })
-export class TasksListComponent {
-  public tasks: Array<Task> = [];
+export class TasksListComponent implements DoCheck {
 
-  public isChecked: boolean = false;
+  ngDoCheck(): void {
+    this.tasks.sort( (first, last) => Number(first.isChecked) - Number(last.isChecked) );
+  }
+  public tasks: Array<Task> = [];
 
   public check(task: Task) {
     task.isChecked = !task.isChecked;
-    if(task.isChecked == true) {
-      this.empurrarNaFila(task);
-    }
   }
 
   public empurrarNaFila(task: Task) {
@@ -26,6 +25,13 @@ export class TasksListComponent {
   public deleteTask(task: Task) {
     const index = this.tasks.indexOf(task);
     this.tasks.splice(index, 1);
+  }
+
+  public deleteAll() {
+    const confirm = window.confirm("Tem certeza que deseja deletar todas as tasks?");
+    if(confirm) {
+      this.tasks = [];
+    }
   }
 
   public cadastrarTask(event: Task) {

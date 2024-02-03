@@ -1,5 +1,5 @@
 <div class="tasks-list">
-    <ul *ngIf="tasks.length > 0">
+    <ul *ngIf="tasks.length">
         <li class="task" *ngFor="let task of tasks">
             <input (click)="check(task)" class="check-input" type="checkbox" name="check">
             <p class="task-title" [ngClass]="task.isChecked ? 'checked-task' : '' ">{{task.title}}</p>
@@ -19,3 +19,4 @@
     </svg> 
 </div>   
 <app-input-task (novaTask)="cadastrarTask($event)"></app-input-task>
+<button *ngIf="tasks.length" class="delete-all-btn" (click)="deleteAll()">Deletar todos</button>

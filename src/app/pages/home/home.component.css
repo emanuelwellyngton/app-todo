@@ -3,7 +3,7 @@
 }
 
 header {
-    background-color: #AF7EEB;
+    background-color: var(--secudary-bg-color);
     padding: 15px 120px;
     margin: 50px 0 20px 0;
     display: inline-block;
@@ -11,9 +11,20 @@ header {
 }
 
 header h1 {
-    color: #FFF;
+    color: var(--primary-text-color);
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal; 
+}
+
+@media screen and (max-width: 358px) {
+    :host {
+        width: 80vw;
+    }
+
+    header {
+        padding: 5%;
+        width: 70%;
+    }
 }

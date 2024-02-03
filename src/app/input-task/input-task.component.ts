@@ -10,7 +10,7 @@ import { Task } from '../model/task';
   .input-task {
     background-color: #AF7EEB;
     padding: 11px 53px;
-    color: #FFF;
+    color: var(--primary-text-color);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -27,12 +27,18 @@ import { Task } from '../model/task';
   }
 
   .input-task::placeholder {
-    color: #FFF;
+    color: var(--primary-text-color);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal; 
   }
+
+  @media screen and (max-width: 358px) {
+    .input-task {
+        width: 30%;
+    }
+}
   `]
 })
 export class InputTaskComponent {
@@ -41,9 +47,12 @@ export class InputTaskComponent {
   public valor: string = '';
 
   public cadastrarTask() {
-    if(this.valor != '') {
+    const valor = this.valor.trim();
+
+    if(valor != '') {
+
       const task:Task = {
-        title: this.valor,
+        title: valor,
         isChecked: false
       }
   
